@@ -32,6 +32,15 @@ describe('Input', () => {
     expect(screen.queryByText('Use 3-20 chars')).not.toBeInTheDocument()
   })
 
+  it('shows hint when error is empty string', () => {
+    render(<Input id="username" label="Username" hint="Use 3-20 chars" error="" value="" onChange={() => {}} />)
+
+    const input = screen.getByLabelText('Username')
+    expect(screen.getByText('Use 3-20 chars')).toBeInTheDocument()
+    expect(input).not.toHaveAttribute('aria-invalid')
+    expect(input).toHaveAttribute('aria-describedby', 'username-hint')
+  })
+
   it('calls onChange in controlled mode', () => {
     const onChange = vi.fn()
     render(<Input label="Name" value="" onChange={onChange} />)
