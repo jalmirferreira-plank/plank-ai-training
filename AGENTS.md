@@ -8,12 +8,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Pull Request Readiness Gate
 
-Before creating any pull request, first remove superpowers documentation under `docs/superpowers`.
-
 Before creating any pull request, always run both checks and ensure they pass:
-
-0. `docs/superpowers` cleanup
-  - Delete superpowers documentation files under `docs/superpowers` before opening the PR.
 
 1. `pr-review-trio`
   - Run the full trio review (bug, performance, security).  
